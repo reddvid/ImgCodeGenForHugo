@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:local="clr-namespace:Imager.MAUI"
+             Title="Image Code Generator for Hugo Website"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Imager.MAUI.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:MainViewModel />
+    </ContentPage.BindingContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <StackLayout Padding="20">
+            <Label Text="HTML PREVIEW"/>
+            <WebView HeightRequest="400">
+                <WebView.Source>
+                    <HtmlWebViewSource Html="{Binding HtmlPreview}"/>
+                </WebView.Source>
+            </WebView>
+            <Border HeightRequest="10"/>
+            <Button Text="Preview"
+                    Command="{Binding PreviewHtmlCommand}"/>
+        </StackLayout>
+        <StackLayout Grid.Row="1"
+                     Spacing="10"
+                     Padding="20">
+            <Label Text="INPUT"/>
+            <Entry x:Name="edSrc"
+                    Placeholder="https://cdn.example.com/sample.png"
+                    Text="{Binding Src, Mode=TwoWay}"/>
+            <Entry x:Name="edAlt"
+                   Placeholder="Alt Text"
+                   Text="{Binding Alt}"/>
+            <Entry x:Name="edCaption"
+                   Placeholder="Caption"
+                   Text="{Binding Caption}"/>
+            <Slider x:Name="sldrWidth"
+                    Minimum="0"
+                    Maximum="100"
+                    Value="{Binding Width, Mode=TwoWay}" />
+        </StackLayout>
+        <StackLayout Grid.RowSpan="2"
+                     Grid.Column="1"
+                     Padding="20">
+            <Label Text="OUTPUT"/>
+            <Label Text="HTML Figure"/>
+            <Editor IsReadOnly="True"
+                    Text="{Binding Figure}"
+                    MinimumHeightRequest="140"/>
+            <Button Text="Copy HTML"
+                    Command="{Binding CopyFigureCommand}"/>
+            <Border HeightRequest="20"/>
+            <Label Text="Markdown"/>
+            <Editor IsReadOnly="True"
+                    Text="{Binding Markdown}"
+                    MinimumHeightRequest="100" FontFamily="Courier New"/>
+            <Button Text="Copy Markdown"
+                    Command="{Binding CopyMarkdownCommand}"/>
+            <Border HeightRequest="20"/>
+            <Label Text="Shortcode"/>
+            <Editor IsReadOnly="True"
+                    Text="{Binding Shortcode}"
+                    MinimumHeightRequest="120"/>
+            <Button Text="Copy Shortcode"
+                    Command="{Binding CopyShortcodeCommand}"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>
