@@ -123,8 +123,8 @@ public class MainViewModel : INotifyPropertyChanged
     public string Markdown => $"![{Alt}]({Src})";
 
     public string Shortcode => string.IsNullOrWhiteSpace(Caption)
-        ? "{{< figure src=\"" + Src + "\" alt=\"" + Alt + "\" width=\"" + Width + "%\" >}}"
-        : "{{< figure src=\"" + Src + "\" caption=\"" + Caption + "\" alt=\"" + Alt +"\" width=\"" + Width + "%\" >}}";
+        ? "{{< figure src=\"" + Src + "\" alt=\"" + Alt + "\" width=\"" + $"{Width:N0}" + "%\" >}}"
+        : "{{< figure src=\"" + Src + "\" caption=\"" + Caption + "\" alt=\"" + Alt +"\" width=\"" + $"{Width:N0}" + "%\" >}}";
 
     public int WidthPercent => Convert.ToInt32(Width);
 
