@@ -13,7 +13,7 @@
             <Setter Property="FontFamily">
                 <OnPlatform x:TypeArguments="x:String">
                     <On Platform="MacCatalyst">Menlo</On>
-                    <On Platform="Windows">Cascadia Code</On>
+                    <On Platform="WinUI">Cascadia Code</On>
                 </OnPlatform>
             </Setter>
         </Style>
@@ -27,15 +27,15 @@
             <RowDefinition Height="3*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-        <StackLayout Padding="20">
+        <StackLayout Padding="20" 
+                     Spacing="10">
             <Label Text="HTML PREVIEW"/>
-            <WebView HeightRequest="400">
+            <WebView VerticalOptions="FillAndExpand">
                 <WebView.Source>
                     <HtmlWebViewSource Html="{Binding HtmlPreview}"/>
                 </WebView.Source>
             </WebView>
-            <Border HeightRequest="10"/>
-            <Button Text="Preview"
+            <Button Text="Preview" VerticalOptions="End"
                     Command="{Binding PreviewHtmlCommand}"/>
         </StackLayout>
         <StackLayout Grid.Row="1"
@@ -64,6 +64,7 @@
         </StackLayout>
         <StackLayout Grid.RowSpan="2"
                      Grid.Column="1"
+                     Spacing="10"
                      Padding="20">
             <Label Text="OUTPUT"/>
             <Label Text="HTML Figure"/>
