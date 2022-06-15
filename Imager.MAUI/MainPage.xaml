@@ -73,15 +73,15 @@
                     MinimumHeightRequest="140">
             </Editor>
             <Button Text="Copy HTML"
-                    Command="{Binding CopyFigureCommand}"/>
-            <Border HeightRequest="20"/>
+                    Command="{Binding CopyFigureCommand}"
+                    Margin="0,0,0,20"/>
             <Label Text="Markdown"/>
             <Editor IsReadOnly="True"
                     Text="{Binding Markdown}"
                     MinimumHeightRequest="100"/>
             <Button Text="Copy Markdown"
-                    Command="{Binding CopyMarkdownCommand}"/>
-            <Border HeightRequest="20"/>
+                    Command="{Binding CopyMarkdownCommand}"
+                    Margin="0,0,0,20"/>
             <Label Text="Shortcode"/>
             <Editor IsReadOnly="True"
                     Text="{Binding Shortcode}"
