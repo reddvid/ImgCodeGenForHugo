@@ -70,7 +70,6 @@
             <Editor IsReadOnly="True"
                     Text="{Binding Figure}"
                     MinimumHeightRequest="140">
-
             </Editor>
             <Button Text="Copy HTML"
                     Command="{Binding CopyFigureCommand}"/>
