@@ -1,14 +1,14 @@
-using System.ComponentModel;
 using System;
+using System.ComponentModel;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 
-namespace Imager.MAUI;
+namespace Imager.MAUI.ViewModels;
 
-public class MainViewModel : INotifyPropertyChanged
+public class ImageViewModel : INotifyPropertyChanged
 {
-    public MainViewModel()
+    public ImageViewModel()
     {
         Width = 85D;
 
@@ -29,7 +29,7 @@ public class MainViewModel : INotifyPropertyChanged
 
         PreviewHtmlCommand = new Command(() =>
         {
-            HtmlPreview = @"<HTML><BODY>" + Figure + "</BODY></HTML>";
+            HtmlPreview = @"<HTML><BODY style=""font-family: sans-serif;"">" + Figure + "</BODY></HTML>";
         });
     }
 

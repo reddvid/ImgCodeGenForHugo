@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Imager.MAUI.Views.ShortcodesPage"
+             xmlns:local="clr-namespace:Imager.MAUI"
+             Title="Shortcodes">
+
+    <ContentPage.BindingContext>
+        <local:ViewModels.ShortcodesVieModel />
+    </ContentPage.BindingContext>
+
+   <ScrollView>
+       <VerticalStackLayout Margin="20"
+                            Spacing="10">
+           <Label Text="TWEET" />
+           <Entry Placeholder="https://twitter.com/reddvid/status/124567890"/>
+           <Label Text="{Binding TweetShortcode}"/>
+       </VerticalStackLayout>
+
+   </ScrollView>
+</ContentPage>
