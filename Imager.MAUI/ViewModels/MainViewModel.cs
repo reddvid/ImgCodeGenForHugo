@@ -116,8 +116,8 @@ public class MainViewModel : INotifyPropertyChanged
     }
 
     public string Figure => string.IsNullOrWhiteSpace(Caption)
-        ? $"<figure class=\"image\">\n\t<img src=\"{Src}\" alt=\"{Alt}\" width=\"{Width:N0}%\">\n</figure>"
-        : $"<figure class=\"image\">\n\t<img src=\"{Src}\" alt=\"{Alt}\" width=\"{Width:N0}%\">\n\t<figcaption>{Caption}</figcaption>\n</figure>";
+        ? $"<figure class=\"image\">\n\t<img src=\"{Src}\" alt=\"{Alt}\" width=\"{Width:N0}%\" />\n</figure>"
+        : $"<figure class=\"image\">\n\t<img src=\"{Src}\" alt=\"{Alt}\" width=\"{Width:N0}%\" />\n\t<figcaption>{Caption}</figcaption>\n</figure>";
 
 
     public string Markdown => $"![{Alt}]({Src})";
